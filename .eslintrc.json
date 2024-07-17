@@ -1,0 +1,67 @@
+{
+  "root": true,
+  "ignorePatterns": ["assets/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": ["./tsconfig.json"],
+        "ecmaVersion": 11,
+        "sourceType": "module",
+        "createDefaultProgram": true
+      },
+      "plugins": ["rxjs"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:prettier/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:rxjs/recommended"
+      ],
+      "rules": {
+        "@typescript-eslint/semi": "off",
+        "@typescript-eslint/lines-between-class-members": "off",
+        "@typescript-eslint/no-useless-constructor": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-namespace": "off",
+        "rxjs/no-ignored-observable": "off",
+        "rxjs/no-ignored-subscription": "off",
+        "rxjs/no-ignored-replay-buffer": "off",
+        "rxjs/no-async-subscribe": "error",
+        "rxjs/no-nested-subscribe": "error",
+        "rxjs/no-unbound-methods": "error",
+        "rxjs/throw-error": "error",
+        "semi": "off",
+        "no-unsafe-optional-chaining": "off",
+        "no-unexpected-multiline": "error",
+        "no-restricted-syntax": "off",
+        "max-classes-per-file": "off",
+        "import/prefer-default-export": "off",
+        "object-curly-newline": "off",
+        "max-len": [
+          "error",
+          {
+            "code": 140,
+            "ignorePattern": "^import\\s.+from\\s.+$"
+          }
+        ],
+        "spaced-comment": "off",
+        "class-methods-use-this": "off",
+        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
+      }
+    },
+    {
+      "files": ["./src/**/*.component.html", "./src/index.html"],
+      "parser": "@angular-eslint/template-parser",
+      "rules": {
+        "@typescript-eslint/dot-notation": "off",
+        "@typescript-eslint/no-implied-eval": "off",
+        "@typescript-eslint/no-throw-literal": "off",
+        "strict": "off",
+        "import/first": "off",
+        "lines-around-directive": "off"
+      }
+    }
+  ]
+}
