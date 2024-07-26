@@ -8,9 +8,11 @@
       <app-todo-list [todo]="todo" [@listAnimation] />
     }
 
-    <div (click)="onAddClick()" class="add-todo-placeholder">
-      <app-icon iconClass="add" />
-      <span class="text-link">{{ "todo.addList" | translate }}</span>
-    </div>
+    @if (isLogged()) {
+      <div (click)="onAddClick()" class="add-todo-placeholder">
+        <app-icon iconClass="add" />
+        <span class="text-link">{{ "todo.addList" | translate }}</span>
+      </div>
+    }
   </section>
 </main>

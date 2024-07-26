@@ -11,6 +11,7 @@ import { Store } from '@ngxs/store'
 
 import { IconComponent } from '../../../../shared/components/icon/icon.component'
 import { Todo } from '../../../../shared/models/todo.model'
+import { AuthStateQueries } from '../../../../shared/states/auth/auth.state-queries'
 import { selectToSignal } from '../../../../shared/utils/general'
 import { AddTodoDialogComponent } from '../../components/add-todo-dialog/add-todo-dialog.component'
 import { TodoFilterComponent } from '../../components/todo-filter/todo-filter.component'
@@ -33,6 +34,7 @@ import { TodoStateQueries } from '../../state/todo.state-queries'
   ],
 })
 export class ListOfTodoComponent implements OnInit {
+  readonly isLogged = selectToSignal(AuthStateQueries.isLogged)
   readonly todos = selectToSignal(TodoStateQueries.list)
   readonly store = inject(Store)
   readonly dialog = inject(Dialog)

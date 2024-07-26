@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve --port 4600",
     "build": "ng build",
+    "build-docs": "ng build && rm -rf docs && mkdir docs && mv dist/todo-fe/browser/* docs/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
