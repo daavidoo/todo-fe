@@ -1,0 +1,19 @@
+.user-page {
+  @apply grid justify-center items-center;
+
+  &__card {
+    @apply flex flex-col items-center gap-4 p-8 min-w-80 min-h-80 bg-white shadow;
+
+    &__avatar {
+      @apply w-20 h-20 rounded-full bg-gray-300 overflow-hidden;
+    }
+
+    &__name {
+      @apply text-2xl font-semibold text-gray-500;
+    }
+
+    &__email {
+      @apply text-gray-500;
+    }
+  }
+}

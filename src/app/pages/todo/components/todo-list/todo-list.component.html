@@ -1,0 +1,36 @@
+<main class="todo-list">
+  <section class="todo-list__title">
+    <div>{{ todo()?.title }}</div>
+    <app-icon (click)="onToggleFilterClick()" iconClass="search" />
+
+    @if (isLogged()) {
+      <app-icon (click)="onEditClick()" iconClass="edit" />
+      <app-icon (click)="onDeleteListClick()" [outline]="true" iconClass="cancel" />
+    }
+  </section>
+
+  @if (isFilterVisible()) {
+    <section class="form-component">
+      <input [(ngModel)]="filterValue" type="text" class="slim" #filterValueTmp />
+    </section>
+  }
+
+  <section class="todo-list__content">
+    @for (item of filteredItems(); track item.id; let index = $index) {
+      <app-todo-item
+        [item]="item"
+        [index]="index"
+        [@itemAnimation]
+        (onFinishClick)="onFinishClick(item)"
+        (onDeleteClick)="onDeleteItemClick(item.id)"
+        (onEditClick)="onEditItemClick(item)"
+      />
+    }
+  </section>
+
+  @if (isLogged()) {
+    <section class="todo-list__add">
+      <span (click)="onAddTodoClick()" class="text-link">{{ "todo.addItem" | translate }}</span>
+    </section>
+  }
+</main>

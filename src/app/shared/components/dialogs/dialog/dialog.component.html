@@ -1,0 +1,10 @@
+<main class="dialog">
+  <section class="dialog__header">
+    {{ header() | memoize: getHeader : this }}
+    <i (click)="dialogRef.close(null)" class="material-icons dialog__header__close">close</i>
+  </section>
+  <ng-content></ng-content>
+  <section class="dialog__buttons">
+    <ng-content select="[buttons]"></ng-content>
+  </section>
+</main>

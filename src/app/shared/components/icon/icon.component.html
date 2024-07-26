@@ -1,0 +1,6 @@
+<i
+  [ngClass]="[outline(), isDisabled(), size()] | memoize: getCssClass : this"
+  class="material-icons"
+>
+  {{ iconClass() }}
+</i>

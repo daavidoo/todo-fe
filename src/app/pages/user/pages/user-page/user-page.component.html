@@ -1,0 +1,11 @@
+<main class="page user-page">
+  <section class="user-page__card">
+    <div class="user-page__card__avatar">
+      <img [src]="userInfo()?.picture" alt="Avatar" />
+    </div>
+    <div class="user-page__card__name">
+      {{ userInfo()?.name }}
+    </div>
+    <div class="user-page__card__email">{{ userInfo()?.email }}</div>
+  </section>
+</main>

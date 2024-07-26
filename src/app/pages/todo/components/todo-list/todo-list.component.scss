@@ -1,0 +1,19 @@
+.todo-list {
+  @apply grid p-2 gap-2 relative rounded min-w-72 bg-gray-300;
+
+  &__title {
+    @apply flex items-center gap-1.5 font-bold text-gray-700;
+
+    & > div:first-child {
+      @apply grow;
+    }
+  }
+
+  &__content {
+    @apply grid gap-1;
+  }
+
+  &__add {
+    @apply flex justify-end;
+  }
+}

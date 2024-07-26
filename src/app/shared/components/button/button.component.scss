@@ -1,0 +1,15 @@
+.btn {
+  @apply px-5 py-1.5 min-h-9 bg-primary text-white rounded-md border border-solid;
+
+  &.btn-primary {
+    @apply border-primary;
+  }
+
+  &.btn-secondary {
+    @apply bg-orange-400 text-primary;
+  }
+
+  &.btn-outline {
+    @apply bg-white border border-solid text-gray-700;
+  }
+}

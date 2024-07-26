@@ -1,0 +1,7 @@
+<app-dialog header="commons.warning">
+  {{ data | translate }}
+  <ng-container buttons>
+    <app-button (clicked)="dialogRef.close(true)" label="btn.confirm" />
+    <app-button (clicked)="dialogRef.close(false)" label="btn.cancel" type="outline" />
+  </ng-container>
+</app-dialog>

@@ -1,0 +1,9 @@
+<div class="form-component__label">
+  <div class="grow">
+    {{ label() }}
+    @if (isRequired()) {
+      <span class="text-primary">*</span>
+    }
+  </div>
+  <div class="text-red-700">{{ errorMessage() }}</div>
+</div>

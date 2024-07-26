@@ -1,0 +1,8 @@
+<button
+  (click)="clicked.emit()"
+  [ngClass]="cssClass() | memoize: getCssClass : this"
+  [routerLink]="passedRouterLink()"
+  type="button"
+>
+  {{ label() | memoize: getLabel : this }}
+</button>

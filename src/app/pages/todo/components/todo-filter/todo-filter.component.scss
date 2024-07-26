@@ -1,0 +1,19 @@
+.todo-filter {
+  @apply flex p-2;
+
+  &__item {
+    @apply flex px-2 py-1 border-2 border-solid border-gray-700 cursor-pointer;
+
+    &:first-child {
+      @apply rounded-tl-lg rounded-bl-lg;
+    }
+
+    &:last-child {
+      @apply rounded-tr-lg rounded-br-lg;
+    }
+
+    &.active {
+      @apply bg-primary text-white cursor-auto;
+    }
+  }
+}

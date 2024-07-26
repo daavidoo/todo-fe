@@ -1,0 +1,22 @@
+<section [ngClass]="colors | memoize: getBorderColor : this" class="todo-item">
+  <div [ngClass]="{ 'line-through': item()?.finished }" class="todo-item__title">
+    {{ item()?.title }}
+  </div>
+  <div class="todo-item__content">{{ item()?.content }}</div>
+  <div class="todo-item__footer">
+    <app-icon iconClass="schedule" />
+    <span>{{ item()?.deadline | dateTimeCustom }}</span>
+  </div>
+
+  @if (isLogged()) {
+    <section class="todo-item__actions">
+      <app-icon
+        (click)="onFinishClick.emit()"
+        [iconClass]="item()?.finished ? 'do_not_disturb_on' : 'check_circle'"
+        [outline]="true"
+      />
+      <app-icon (click)="onEditClick.emit()" iconClass="edit" />
+      <app-icon (click)="onDeleteClick.emit()" [outline]="true" iconClass="cancel" />
+    </section>
+  }
+</section>

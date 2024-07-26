@@ -1,0 +1,15 @@
+html,
+body {
+  @apply bg-primary-light;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+.page {
+  @apply container m-auto xl:px-0 px-4;
+  height: calc(100vh - 3rem);
+
+  .title-section {
+    @apply pt-4 pb-2 text-2xl font-bold;
+  }
+}

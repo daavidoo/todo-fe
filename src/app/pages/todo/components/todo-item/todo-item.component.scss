@@ -1,0 +1,45 @@
+.todo-item {
+  @apply grid p-1 relative bg-white rounded shadow-md border-l-4;
+
+  &__title {
+    @apply text-gray-700 font-bold;
+  }
+
+  &__content {
+    @apply text-sm text-gray-700;
+  }
+
+  &__footer {
+    @apply flex gap-1 items-center text-xs text-gray-400;
+  }
+
+  &:hover &__actions {
+    @apply flex gap-0.5;
+  }
+
+  &__actions {
+    @apply absolute hidden right-1 top-1;
+  }
+
+  &.b {
+    &-aqua {
+      @apply border-aqua;
+    }
+
+    &-golden-yellow {
+      @apply border-golden-yellow;
+    }
+
+    &-ocean {
+      @apply border-ocean;
+    }
+
+    &-magenta {
+      @apply border-magenta;
+    }
+
+    &-lavender {
+      @apply border-lavender;
+    }
+  }
+}

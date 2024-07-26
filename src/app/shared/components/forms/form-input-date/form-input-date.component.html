@@ -1,0 +1,15 @@
+<div class="form-component">
+  <app-form-label
+    [errorMessage]="errorMessage()"
+    [isRequired]="isRequired()"
+    [label]="label() | memoize: getLabel : this"
+  />
+  <input
+    (focusout)="onTouch()"
+    (ngModelChange)="setValue($event)"
+    [ngClass]="[cssClass(), errorMessage()] | memoize: getCssClass : this"
+    [ngModel]="value()"
+    [placeholder]="placeholder()"
+    type="datetime-local"
+  />
+</div>

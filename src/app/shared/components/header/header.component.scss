@@ -1,0 +1,30 @@
+.header {
+  @apply flex justify-center h-12 bg-primary shadow-sm;
+
+  &__content {
+    @apply container flex grow content-end;
+
+    &__logo {
+      @apply flex items-center grow gap-2 text-white leading-3 text-2xl;
+    }
+
+    &__item {
+      @apply flex items-center p-2 text-white;
+
+      &:hover:not(.active) {
+        @apply cursor-pointer;
+      }
+
+      &.active {
+        @apply border-b-2 border-solid border-white;
+      }
+    }
+
+    &__buttons {
+      display: flex;
+      align-items: center;
+      padding: 0 0.5rem;
+      gap: 0.5rem;
+    }
+  }
+}

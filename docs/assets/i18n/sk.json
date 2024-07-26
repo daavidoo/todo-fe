@@ -1,0 +1,46 @@
+{
+  "commons": {
+    "title": "Názov",
+    "content": "Obsah",
+    "deadline": "Konečný termín",
+    "warning": "Upozornenie"
+  },
+  "navigation": {
+    "todo": "Todo",
+    "user": "Používateľ"
+  },
+  "btn": {
+    "create": "Vytvor",
+    "update": "Upraviť",
+    "confirm": "Potvrdiť",
+    "cancel": "Zrušiť",
+    "logIn": "Prihlásiť",
+    "logOut": "Odhlásiť"
+  },
+  "todo": {
+    "addList": "Pridať zoznam",
+    "editList": "Upraviť zoznam",
+    "addItem": "Pridať úlohu",
+    "editItem": "Upraviť úlohu"
+  },
+  "form": {
+    "placeholder": {
+      "input.text": "Zadajte text..."
+    },
+    "validation": {
+      "required": "'{{field}}' je povinným poľom."
+    }
+  },
+  "msg": {
+    "confirm": {
+      "removeItem": "Naozaj chcete odstrániť položku?"
+    }
+  },
+  "enums": {
+    "filterState": {
+      "All": "Všetky",
+      "Active": "Aktívne",
+      "Finished": "Ukončené"
+    }
+  }
+}

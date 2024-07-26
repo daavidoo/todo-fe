@@ -1,0 +1,42 @@
+.form-component {
+  display: grid;
+
+  &__label {
+    display: flex;
+    font-size: 11px;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="number"],
+  textarea,
+  select {
+    padding: 0.4rem 0.5rem;
+    min-height: 2.5rem;
+    border: 1px solid gray;
+    border-radius: 0;
+
+    &::placeholder {
+      color: gray;
+      font-weight: 300;
+    }
+
+    &:focus {
+      @apply border-primary;
+    }
+
+    &:focus-visible {
+      @apply outline-0;
+    }
+
+    &.has-error {
+      @apply border-2 border-solid border-red-700 outline-red-700 outline-1;
+    }
+
+    &.slim {
+      @apply min-h-6 py-1;
+    }
+  }
+}

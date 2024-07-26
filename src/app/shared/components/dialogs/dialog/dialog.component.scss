@@ -1,0 +1,16 @@
+.dialog {
+  @apply grid gap-2 p-4 bg-white rounded;
+  min-width: 30rem;
+
+  &__header {
+    @apply relative font-bold text-xl;
+
+    &__close {
+      @apply absolute right-1 top-1 cursor-pointer;
+    }
+  }
+
+  &__buttons {
+    @apply flex grow gap-1 justify-end;
+  }
+}

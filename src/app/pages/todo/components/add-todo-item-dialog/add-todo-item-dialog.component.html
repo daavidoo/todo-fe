@@ -1,0 +1,15 @@
+<app-dialog [header]="data?.id | memoize: getDialogTitle : this">
+  <form [formGroup]="formGroup" class="grid gap-2">
+    <app-form-input [formControlName]="ffNames.Title" label="commons.title" />
+    <app-form-textarea [formControlName]="ffNames.Content" label="commons.content" />
+    <app-form-input-date [formControlName]="ffNames.Deadline" label="commons.deadline" />
+  </form>
+
+  <ng-container buttons>
+    <app-button
+      (clicked)="onSubmitClick()"
+      [label]="data?.id | memoize: getSubmitBtnTitle : this"
+    />
+    <app-button (clicked)="onCancelClick()" label="btn.cancel" type="outline" />
+  </ng-container>
+</app-dialog>

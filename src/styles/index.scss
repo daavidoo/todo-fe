@@ -1,3 +1,14 @@
+@import "@angular/cdk/overlay-prebuilt.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+$material-icons-font-path: "material-icons/iconfont/";
+@import "material-icons";
+
+@import "layout.scss";
+@import "buttons.scss";
+@import "icons.scss";
+@import "utils.scss";
+@import "forms.scss";
