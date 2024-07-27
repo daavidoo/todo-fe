@@ -45,12 +45,11 @@ export class AuthState {
     }
     redirect.push('/todo')
 
-    console.log('---', redirect.join(''))
     const authConfig: AuthConfig = {
       issuer: 'https://accounts.google.com',
       strictDiscoveryDocumentValidation: false,
       clientId: environment.clientId,
-      redirectUri: redirect.join(''),
+      redirectUri: 'https://daavidoo.github.io/todo-fe/todo',
       scope: 'openid profile email',
     }
 
