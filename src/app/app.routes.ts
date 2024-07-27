@@ -10,7 +10,11 @@ import { AuthStateQueries } from './shared/states/auth/auth.state-queries'
 export const routes: Routes = [
   {
     path: '',
+    redirectTo: Navigation.Todo,
     pathMatch: 'full',
+  },
+  {
+    path: Navigation.Todo,
     loadChildren: () => import('./pages/todo/todo.routes').then((r) => r.routes),
     providers: [provideStates([TodoState])],
   },
@@ -19,5 +23,9 @@ export const routes: Routes = [
     loadChildren: () => import('./pages/user/use.routes').then((r) => r.routes),
     canActivate: [() => inject(Store).selectSnapshot(AuthStateQueries.isLogged)],
   },
-  { path: '**', redirectTo: '', pathMatch: 'full' },
+  {
+    path: '**',
+    redirectTo: Navigation.Todo,
+    pathMatch: 'full',
+  },
 ]
