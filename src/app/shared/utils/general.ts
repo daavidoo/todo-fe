@@ -8,7 +8,7 @@ import { Store } from '@ngxs/store'
 export function getDefaultRoutes(path: string): Route[] {
   return [
     { path: '', redirectTo: path, pathMatch: 'full' },
-    { path: '**', redirectTo: path, pathMatch: 'full' },
+    { path: '**', redirectTo: path },
   ]
 }
 
