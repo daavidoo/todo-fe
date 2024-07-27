@@ -39,6 +39,7 @@ export class AuthState {
   }
 
   private async initConfiguration(): Promise<void> {
+    console.log('---', window.location.origin + '/todo')
     const authConfig: AuthConfig = {
       issuer: 'https://accounts.google.com',
       strictDiscoveryDocumentValidation: false,
