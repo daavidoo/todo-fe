@@ -1,9 +1,11 @@
 import { Injectable, inject } from '@angular/core'
+import { Router } from '@angular/router'
 
 import { Action, State, StateContext, Store } from '@ngxs/store'
 import { AuthConfig, OAuthService } from 'angular-oauth2-oidc'
 
 import { environment } from '../../../../environments/environment'
+import { Navigation } from '../../enums/navigation.enum'
 import { UserInfo } from '../../models/user.model'
 import { AuthActions } from './auth.actions'
 
@@ -16,6 +18,7 @@ export interface AuthStateModel {
 export class AuthState {
   private readonly oAuthService = inject(OAuthService)
   private readonly store = inject(Store)
+  private readonly router = inject(Router)
 
   constructor() {
     this.initConfiguration()
@@ -31,6 +34,7 @@ export class AuthState {
     this.oAuthService.revokeTokenAndLogout()
     this.oAuthService.logOut()
     ctx.patchState({ userInfo: null })
+    this.router.navigate([Navigation.Todo])
   }
 
   @Action(AuthActions.SetLoginResponse)
@@ -43,7 +47,6 @@ export class AuthState {
       ? 'https://daavidoo.github.io/todo-fe'
       : window.location.origin
 
-    console.log('re', redirectUri)
     const authConfig: AuthConfig = {
       issuer: 'https://accounts.google.com',
       strictDiscoveryDocumentValidation: false,
