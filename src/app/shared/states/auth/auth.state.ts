@@ -43,6 +43,7 @@ export class AuthState {
       ? 'https://daavidoo.github.io/todo-fe'
       : window.location.origin
 
+    console.log('re', redirectUri)
     const authConfig: AuthConfig = {
       issuer: 'https://accounts.google.com',
       strictDiscoveryDocumentValidation: false,
