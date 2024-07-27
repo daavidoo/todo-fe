@@ -39,12 +39,18 @@ export class AuthState {
   }
 
   private async initConfiguration(): Promise<void> {
-    console.log('---', window.location.origin + '/todo')
+    const redirect = [window.location.origin]
+    if (environment.production) {
+      redirect.push('/todo-fe')
+    }
+    redirect.push('/todo')
+
+    console.log('---', redirect.join(''))
     const authConfig: AuthConfig = {
       issuer: 'https://accounts.google.com',
       strictDiscoveryDocumentValidation: false,
       clientId: environment.clientId,
-      redirectUri: window.location.origin + '/todo',
+      redirectUri: redirect.join(''),
       scope: 'openid profile email',
     }
 
