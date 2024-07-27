@@ -40,8 +40,8 @@ export class AuthState {
 
   private async initConfiguration(): Promise<void> {
     const redirectUri = window.location.origin.includes('github.io')
-      ? 'https://daavidoo.github.io/todo-fe/todo'
-      : window.location.origin + '/todo'
+      ? 'https://daavidoo.github.io/todo-fe'
+      : window.location.origin
 
     const authConfig: AuthConfig = {
       issuer: 'https://accounts.google.com',
