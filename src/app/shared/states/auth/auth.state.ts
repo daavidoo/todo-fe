@@ -3,9 +3,9 @@ import { Injectable, inject } from '@angular/core'
 import { Action, State, StateContext, Store } from '@ngxs/store'
 import { AuthConfig, OAuthService } from 'angular-oauth2-oidc'
 
+import { environment } from '../../../../environments/environment'
 import { UserInfo } from '../../models/user.model'
 import { AuthActions } from './auth.actions'
-import { environment } from '../../../../environments/environment'
 
 export interface AuthStateModel {
   userInfo: UserInfo | null
@@ -39,17 +39,15 @@ export class AuthState {
   }
 
   private async initConfiguration(): Promise<void> {
-    const redirect = [window.location.origin]
-    if (environment.production) {
-      redirect.push('/todo-fe')
-    }
-    redirect.push('/todo')
+    const redirectUri = window.location.origin.includes('github.io')
+      ? 'https://daavidoo.github.io/todo-fe/todo'
+      : window.location.origin + '/todo'
 
     const authConfig: AuthConfig = {
       issuer: 'https://accounts.google.com',
       strictDiscoveryDocumentValidation: false,
       clientId: environment.clientId,
-      redirectUri: 'https://daavidoo.github.io/todo-fe/todo',
+      redirectUri,
       scope: 'openid profile email',
     }
 
